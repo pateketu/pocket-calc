@@ -1,0 +1,10 @@
+.calculator{
+  width:375px;
+  height:600px;
+  border:solid 1px #373d45;
+  background-image:url("eelogo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  margin: auto;
+}

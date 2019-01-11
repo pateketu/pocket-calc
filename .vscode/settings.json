@@ -1,0 +1,8 @@
+{
+    "workbench.editor.enablePreview": false,
+    "editor.minimap.enabled": false,    
+    "tslint.autoFixOnSave": true,
+    "eslint.autoFixOnSave": true,
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "javascript.updateImportsOnFileMove.enabled": "never"
+}
