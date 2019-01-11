@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Calculator from './components/calculator';
 import {Provider} from 'react-redux';
 import store from './redux/store';
+import 'bootstrap-css-only/css/bootstrap.css';
 import './App.css';
 import './eelogo.jpg';
 class App extends Component {

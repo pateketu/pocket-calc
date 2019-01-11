@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 export class Display extends React.PureComponent{	
 	render(){		
-		return<div className='display'>
+		return<div className='display-4 text-right display'>
 			{this.props.value}
 		</div>;
 	}

@@ -51,27 +51,30 @@ export class KeyPad extends React.PureComponent{
 	}
 	
 	render(){
-		return <div className="keyPad">
-			<div className="operationKeys">
-				{ 
-					Object.keys(this.operationKeys).map(key =>
-						<Key key={key} 
-							value={key} 
-							onClick={()=> this.handleWithCatch(()=> 
-								this.operationKeys[key]())}>
-						</Key>)
-				}
+		return <div className="d-flex keyPad">
+			<div className="keyPad-col-1">
+				<div className="d-flex operationKeys">
+					{ 
+						Object.keys(this.operationKeys).map(key =>
+							<Key key={key} 
+								value={key} 
+								onClick={()=> this.handleWithCatch(()=> 
+									this.operationKeys[key]())}>
+							</Key>)
+					}
+				</div>
+				<div className="d-flex flex-wrap-reverse numberKeys">
+					{
+						this.numberKeys.map(numberKey=>
+							<Key key={numberKey.key} 
+								className={`number-key-${numberKey.key}`}
+								value={numberKey.key.toString()} 
+								onClick={()=> numberKey.action()}>
+							</Key>)
+					}
+				</div>
 			</div>
-			<div className="numberKeys">
-				{
-					this.numberKeys.map(numberKey=>
-						<Key key={numberKey.key} 
-							value={numberKey.key.toString()} 
-							onClick={()=> numberKey.action()}>
-						</Key>)
-				}
-			</div>
-			<div className="arthmaticOperationKeys">
+			<div className="d-flex flex-column arthmaticOperationKeys">
 				{
 					Object.keys(this.arthmaticOperationKeys).map(key =>
 						<Key key={key} 

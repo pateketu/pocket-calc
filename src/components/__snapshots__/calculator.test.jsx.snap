@@ -22,7 +22,7 @@ exports[`Calculator renders as expeced 1`] = `
           value={0}
         >
           <div
-            className="display"
+            className="display-4 text-right display"
           >
             0
           </div>
@@ -38,172 +38,187 @@ exports[`Calculator renders as expeced 1`] = `
           point={[Function]}
         >
           <div
-            className="keyPad"
+            className="d-flex keyPad"
           >
             <div
-              className="operationKeys"
+              className="keyPad-col-1"
             >
-              <Key
-                onClick={[Function]}
-                value="C"
+              <div
+                className="d-flex operationKeys"
               >
-                <button
-                  className=""
+                <Key
                   onClick={[Function]}
+                  value="C"
                 >
-                  C
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="+/-"
+                  <button
+                    className="btn btn-outline-secondary btn-lg"
+                    onClick={[Function]}
+                  >
+                    C
+                  </button>
+                </Key>
+                <Key
+                  onClick={[Function]}
+                  value="+/-"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg"
+                    onClick={[Function]}
+                  >
+                    +/-
+                  </button>
+                </Key>
+                <Key
+                  onClick={[Function]}
+                  value="%"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg"
+                    onClick={[Function]}
+                  >
+                    %
+                  </button>
+                </Key>
+              </div>
+              <div
+                className="d-flex flex-wrap-reverse numberKeys"
               >
-                <button
-                  className=""
+                <Key
+                  className="number-key-0"
                   onClick={[Function]}
+                  value="0"
                 >
-                  +/-
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="%"
-              >
-                <button
-                  className=""
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-0"
+                    onClick={[Function]}
+                  >
+                    0
+                  </button>
+                </Key>
+                <Key
+                  className="number-key-."
                   onClick={[Function]}
+                  value="."
                 >
-                  %
-                </button>
-              </Key>
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-."
+                    onClick={[Function]}
+                  >
+                    .
+                  </button>
+                </Key>
+                <Key
+                  className="number-key-1"
+                  onClick={[Function]}
+                  value="1"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-1"
+                    onClick={[Function]}
+                  >
+                    1
+                  </button>
+                </Key>
+                <Key
+                  className="number-key-2"
+                  onClick={[Function]}
+                  value="2"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-2"
+                    onClick={[Function]}
+                  >
+                    2
+                  </button>
+                </Key>
+                <Key
+                  className="number-key-3"
+                  onClick={[Function]}
+                  value="3"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-3"
+                    onClick={[Function]}
+                  >
+                    3
+                  </button>
+                </Key>
+                <Key
+                  className="number-key-4"
+                  onClick={[Function]}
+                  value="4"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-4"
+                    onClick={[Function]}
+                  >
+                    4
+                  </button>
+                </Key>
+                <Key
+                  className="number-key-5"
+                  onClick={[Function]}
+                  value="5"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-5"
+                    onClick={[Function]}
+                  >
+                    5
+                  </button>
+                </Key>
+                <Key
+                  className="number-key-6"
+                  onClick={[Function]}
+                  value="6"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-6"
+                    onClick={[Function]}
+                  >
+                    6
+                  </button>
+                </Key>
+                <Key
+                  className="number-key-7"
+                  onClick={[Function]}
+                  value="7"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-7"
+                    onClick={[Function]}
+                  >
+                    7
+                  </button>
+                </Key>
+                <Key
+                  className="number-key-8"
+                  onClick={[Function]}
+                  value="8"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-8"
+                    onClick={[Function]}
+                  >
+                    8
+                  </button>
+                </Key>
+                <Key
+                  className="number-key-9"
+                  onClick={[Function]}
+                  value="9"
+                >
+                  <button
+                    className="btn btn-outline-secondary btn-lg number-key-9"
+                    onClick={[Function]}
+                  >
+                    9
+                  </button>
+                </Key>
+              </div>
             </div>
             <div
-              className="numberKeys"
-            >
-              <Key
-                onClick={[Function]}
-                value="0"
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  0
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="."
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  .
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="1"
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  1
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="2"
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  2
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="3"
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  3
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="4"
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  4
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="5"
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  5
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="6"
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  6
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="7"
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  7
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="8"
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  8
-                </button>
-              </Key>
-              <Key
-                onClick={[Function]}
-                value="9"
-              >
-                <button
-                  className=""
-                  onClick={[Function]}
-                >
-                  9
-                </button>
-              </Key>
-            </div>
-            <div
-              className="arthmaticOperationKeys"
+              className="d-flex flex-column arthmaticOperationKeys"
             >
               <Key
                 isActive={false}
@@ -211,7 +226,7 @@ exports[`Calculator renders as expeced 1`] = `
                 value="÷"
               >
                 <button
-                  className=""
+                  className="btn btn-outline-secondary btn-lg"
                   onClick={[Function]}
                 >
                   ÷
@@ -223,7 +238,7 @@ exports[`Calculator renders as expeced 1`] = `
                 value="X"
               >
                 <button
-                  className=""
+                  className="btn btn-outline-secondary btn-lg"
                   onClick={[Function]}
                 >
                   X
@@ -235,7 +250,7 @@ exports[`Calculator renders as expeced 1`] = `
                 value="-"
               >
                 <button
-                  className=""
+                  className="btn btn-outline-secondary btn-lg"
                   onClick={[Function]}
                 >
                   -
@@ -247,7 +262,7 @@ exports[`Calculator renders as expeced 1`] = `
                 value="+"
               >
                 <button
-                  className=""
+                  className="btn btn-outline-secondary btn-lg"
                   onClick={[Function]}
                 >
                   +
@@ -259,7 +274,7 @@ exports[`Calculator renders as expeced 1`] = `
                 value="="
               >
                 <button
-                  className=""
+                  className="btn btn-outline-secondary btn-lg"
                   onClick={[Function]}
                 >
                   =
