@@ -152,6 +152,17 @@ describe('Calculator', ()=>{
 			
 			expect(wrapper.find('.display').text()).toContain('Cannot divide by Zero');
 		});
+
+		it('click --> 2 --> + --> 1 --> 2 --> =, shows error in display', ()=>{		
+			const expectedResult = '14';
+			wrapper.find('button[children="2"]').simulate('click');
+			wrapper.find('button[children="+"]').simulate('click');
+			wrapper.find('button[children="1"]').simulate('click');
+			wrapper.find('button[children="2"]').simulate('click');
+			wrapper.find('button[children="="]').simulate('click');
+			
+			expect(wrapper.find('.display').text()).toBe(expectedResult);
+		});
 		
 	});
 });

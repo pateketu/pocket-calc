@@ -12,7 +12,8 @@ export default function input(state, payLoad){
 	}
 
 	if(state.currentOperation !== Operation.UNKNNOWN 
-		&& !state.point){		
+		&& !state.point
+		&& !state.previousVal){		
 		return {...state, previousVal:state.currentVal, currentVal:nextVal};
 	}  
 	

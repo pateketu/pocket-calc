@@ -48,6 +48,12 @@ describe('input action', ()=>{
 		expect(state).toEqual({...currentState, currentVal:0.8, point:false});     
 	});
 
+	it('payLoad is valid number, and state contains a currentVal, previousVal & an Operation, returns currentVal made up with payLoad input', ()=>{
+		const currentState = {...initialState, currentVal:6,  currentOperation:Operation.ADD, previousVal:4};
+		const state = sut(currentState, 8);
+		expect(state).toEqual({...currentState, currentVal:68});     
+	});
+
 	it('restricts up to MAX_SAFE_INTEGER', ()=>{
 		let state = sut(initialState,Number.MAX_SAFE_INTEGER);
 			
