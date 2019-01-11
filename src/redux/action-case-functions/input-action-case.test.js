@@ -7,13 +7,13 @@ describe('input action', ()=>{
 		expect(state).toBe(initialState);
 	});
 
-	it('payLoad is valid number, returns state with currentVal as input', ()=>{            
+	it('payLoad is valid number, returns state with expected currentVal', ()=>{            
 		const state = sut(initialState,5);			            
 		expect(state).toEqual({...initialState, currentVal: 5});            
 	});
 
 	
-	it('payLoad is valid number and state has a currentVal, returns state with currentVal made up of first and second input', ()=>{
+	it('payLoad is valid number and state has a currentVal, returns state with currentVal made up of currentVal and payLoad', ()=>{
             
 		const state = sut({...initialState, currentVal:5 }, 9);					
 			
@@ -48,10 +48,15 @@ describe('input action', ()=>{
 		expect(state).toEqual({...currentState, currentVal:0.8, point:false});     
 	});
 
-	it('payLoad is valid number, and state contains a currentVal, previousVal & an Operation, returns currentVal made up with payLoad input', ()=>{
+	it('payLoad is valid number, and state contains a currentVal, previousVal & an Operation, returns expected currentVal', ()=>{
 		const currentState = {...initialState, currentVal:6,  currentOperation:Operation.ADD, previousVal:4};
 		const state = sut(currentState, 8);
 		expect(state).toEqual({...currentState, currentVal:68});     
+	});
+
+	it('payLoad is valid number and currentVal is a string, returns state with expected currentVal', ()=>{
+		const state = sut({...initialState, currentVal:'Errrr'}, 7);
+		expect(state).toEqual({...initialState, currentVal:7});     
 	});
 
 	it('restricts up to MAX_SAFE_INTEGER', ()=>{

@@ -14,7 +14,6 @@ const calcOperation = {
 		if(currentVal === 0)
 			throw new Error('Error: Cannot divide by Zero');
 
-		
 		return !isNaN(parseInt(currentVal)) && !isNaN(parseInt(nextVal)) 
 			?  nextVal/currentVal : 
 			currentVal || nextVal;
@@ -39,7 +38,10 @@ export function calculate(operation, currentVal, nextVal){
 	return fixFloatPrecision(calcOperation[operation](currentVal, nextVal));
 }
 
-function fixFloatPrecision(result){
+function fixFloatPrecision(result){	
+	
+	if(!result) return result;
+
 	let numericVal = result;	
 	if( Math.abs(numericVal) % 1 !== 0){
 		numericVal = numericVal.toString().split('.')[1].length >=2 

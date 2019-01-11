@@ -14,7 +14,12 @@ describe('calc-opertaions', ()=>{
 		});
 
 		it('returns nothing if nextValue specified is NaN', ()=>{
-			const result = sut('+', 7,'hh');
+			const result = sut(Operation.ADD, 7,'hh');
+			expect(result).toBeUndefined();
+		});
+
+		it('returns undefined for substract operation if nextVal is undefined', ()=>{
+			const result = sut(Operation.SUBTRACT, 0,undefined);
 			expect(result).toBeUndefined();
 		});
 	});

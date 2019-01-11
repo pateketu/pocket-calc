@@ -22,8 +22,9 @@ export default function operation(state, payLoad){
 	const nextOperation = payLoad === Operation.EQUAL ? Operation.UNKNNOWN : payLoad;
 
 	if(state.currentOperation !== Operation.UNKNNOWN){
-		const result = calculate(state.currentOperation, state.currentVal, state.previousVal);		
-		return {...state, currentVal:result, 
+		const result = calculate(state.currentOperation, state.currentVal, state.previousVal);
+
+		return {...state,  currentVal: !isNaN(parseInt(result)) ? result : 0, 
 			currentOperation:nextOperation,
 			previousVal:undefined,
 			reset};

@@ -3,8 +3,11 @@ import {initialState} from '../calcReducer';
 import {Operation, calculate} from '../../domain/calculator';
 
 jest.mock('../../domain/calculator');
-calculate.mockImplementation(()=>0);
+
 describe('operation action', ()=>{
+	beforeEach(()=>{
+		calculate.mockImplementation(()=>0);
+	});
 	it('payLoad is UNKNOWN, returns un-changed state', ()=>{
 		const state = sut(initialState,Operation.UNKNNOWN);			
 		expect(state).toBe(initialState);
@@ -33,5 +36,12 @@ describe('operation action', ()=>{
 	it('payLoad is POSITIVE_NEGATIVE, calls calulate with expected arguments', ()=>{
 		sut({...initialState, currentVal:1},Operation.POSITIVE_NEGATIVE);
 		expect(calculate).toHaveBeenCalledWith(Operation.POSITIVE_NEGATIVE, 1);
+	});
+
+	it.only('calculate returns falsy, keeps currentVal  to zero', ()=>{
+		calculate.mockClear();
+		calculate.mockImplementation(()=>undefined);
+		const state = sut({...initialState, currentOperation:Operation.SUBTRACT}, Operation.SUBTRACT);		
+		expect(state).toEqual({...initialState, currentOperation:Operation.SUBTRACT, currentVal:0});
 	});
 });

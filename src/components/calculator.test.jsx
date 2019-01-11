@@ -163,6 +163,13 @@ describe('Calculator', ()=>{
 			
 			expect(wrapper.find('.display').text()).toBe(expectedResult);
 		});
-		
+
+		it('click --> - --> - , keeps zero in display', ()=>{		
+			const expectedResult = '0';
+			wrapper.find('button[children="-"]').simulate('click');
+			wrapper.find('button[children="-"]').simulate('click');
+			
+			expect(wrapper.find('.display').text()).toBe(expectedResult);
+		});
 	});
 });

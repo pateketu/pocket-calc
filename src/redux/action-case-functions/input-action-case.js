@@ -3,6 +3,8 @@ export default function input(state, payLoad){
     
 	if(isNaN(parseInt(payLoad))) return state;
 	
+	const currentVal = !isNaN(parseInt(state.currentVal)) ? state.currentVal : 0;
+
 	let nextVal = Number(payLoad);
 
 	if(state.reset){		
@@ -14,10 +16,10 @@ export default function input(state, payLoad){
 	if(state.currentOperation !== Operation.UNKNNOWN 
 		&& !state.point
 		&& !state.previousVal){		
-		return {...state, previousVal:state.currentVal, currentVal:nextVal};
+		return {...state, previousVal:currentVal, currentVal:nextVal};
 	}  
 	
-	const newVal = state.currentVal !== 0 ? `${state.currentVal}${nextVal}` : nextVal;
+	const newVal = currentVal !== 0 ? `${currentVal}${nextVal}` : nextVal;
 	
 	if(Number(newVal) > Number.MAX_SAFE_INTEGER) return state;
 
