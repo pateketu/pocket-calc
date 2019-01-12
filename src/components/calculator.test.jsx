@@ -42,9 +42,11 @@ describe('Calculator', ()=>{
 		it('click --> 0.1 -- > + --> 0.2 --> =, updates display with expected calculated value', ()=>{
 			const expectedResult = '0.3';
 
+			wrapper.find('button[children="0"]').simulate('click');
 			wrapper.find('button[children="."]').simulate('click');
 			wrapper.find('button[children="1"]').simulate('click');
-			wrapper.find('button[children="+"]').simulate('click');			
+			wrapper.find('button[children="+"]').simulate('click');
+			wrapper.find('button[children="0"]').simulate('click');			
 			wrapper.find('button[children="."]').simulate('click');
 			wrapper.find('button[children="2"]').simulate('click');
 			wrapper.find('button[children="="]').simulate('click');

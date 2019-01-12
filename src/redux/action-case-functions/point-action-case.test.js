@@ -22,4 +22,9 @@ describe('point action', ()=>{
 		const state = sut({...initialState, currentVal:20, currentOperation:Operation.ADD});
 		expect(state).toEqual({...initialState, point:true, currentVal:'0.', previousVal:20, currentOperation:Operation.ADD});
 	});
+
+	it('current value is zero and state has an active operation, sets the current value to 0.', ()=>{
+		const state = sut({...initialState, currentVal:0, previousVal:20, currentOperation:Operation.ADD});
+		expect(state).toEqual({...initialState, point:true, currentVal:'0.', previousVal:20, currentOperation:Operation.ADD});
+	});
 });
