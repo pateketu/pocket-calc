@@ -1,12 +1,22 @@
 .calculator{
   width:374px;
-  border:solid 1px #373d45;
+  border:solid 1px #1795d4;  
+  margin: auto;
+  margin-top:20px; 
+  position: relative;
+}
+.ee-branding{
   background-image:url("eelogo.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 50%;
-  margin: auto;
-  margin-top:20px; 
+  background-size: 100%;
+  height: 100px;
+  width:200px;
+  z-index:-1;
+  opacity:0.4;
+  position: absolute;
+  top:40%;
+  left:18%
 }
 .calculator button{
   margin:8px;

@@ -16,6 +16,9 @@ exports[`Calculator renders as expeced 1`] = `
     <div
       className="calculator"
     >
+      <div
+        className="ee-branding"
+      />
       <Connect(Display)>
         <Display
           dispatch={[Function]}
@@ -38,13 +41,11 @@ exports[`Calculator renders as expeced 1`] = `
           point={[Function]}
         >
           <div
-            className="d-flex keyPad"
+            className="d-flex"
           >
-            <div
-              className="keyPad-col-1"
-            >
+            <div>
               <div
-                className="d-flex operationKeys"
+                className="d-flex"
               >
                 <Key
                   onClick={[Function]}
@@ -81,7 +82,7 @@ exports[`Calculator renders as expeced 1`] = `
                 </Key>
               </div>
               <div
-                className="d-flex flex-wrap-reverse numberKeys"
+                className="d-flex flex-wrap-reverse"
               >
                 <Key
                   className="number-key-0"
@@ -218,7 +219,7 @@ exports[`Calculator renders as expeced 1`] = `
               </div>
             </div>
             <div
-              className="d-flex flex-column arthmaticOperationKeys"
+              className="d-flex flex-column"
             >
               <Key
                 isActive={false}

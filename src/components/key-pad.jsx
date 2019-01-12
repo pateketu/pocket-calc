@@ -51,9 +51,9 @@ export class KeyPad extends React.PureComponent{
 	}
 	
 	render(){
-		return <div className="d-flex keyPad">
-			<div className="keyPad-col-1">
-				<div className="d-flex operationKeys">
+		return <div className="d-flex">			
+			<div>
+				<div className="d-flex">
 					{ 
 						Object.keys(this.operationKeys).map(key =>
 							<Key key={key} 
@@ -63,7 +63,7 @@ export class KeyPad extends React.PureComponent{
 							</Key>)
 					}
 				</div>
-				<div className="d-flex flex-wrap-reverse numberKeys">
+				<div className="d-flex flex-wrap-reverse">
 					{
 						this.numberKeys.map(numberKey=>
 							<Key key={numberKey.key} 
@@ -74,7 +74,7 @@ export class KeyPad extends React.PureComponent{
 					}
 				</div>
 			</div>
-			<div className="d-flex flex-column arthmaticOperationKeys">
+			<div className="d-flex flex-column">
 				{
 					Object.keys(this.arthmaticOperationKeys).map(key =>
 						<Key key={key} 
