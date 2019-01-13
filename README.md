@@ -15,6 +15,7 @@ npm run test:win in root directory to run the test in non-interactive mode
 ### Known Limitations:
 1. No Keyboard support, can only be operated via Click/Touch of the Keys on Calculator.
 2. Does not strictly follow (BI)DMAS (Division, Multiplication, Addition & Substraction) when there is more than one mathematical operations.
+3. Please note that Pocket Calculator's Look/Feel & branding has only been varified in Chrome 71 on Windows
 
 Live Url: [https://pocket-calc.azurewebsites.net](https://pocket-calc.azurewebsites.net)
 
