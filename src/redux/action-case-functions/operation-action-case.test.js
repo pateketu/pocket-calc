@@ -44,4 +44,9 @@ describe('operation action', ()=>{
 		const state = sut({...initialState, currentOperation:Operation.SUBTRACT}, Operation.SUBTRACT);		
 		expect(state).toEqual({...initialState, currentOperation:Operation.SUBTRACT, currentVal:0});
 	});
+
+	it('state does not have active operation and has reset flag, returns state with new operation and falsy reset', ()=>{            
+		const state = sut({...initialState, reset:true}, Operation.ADD);
+		expect(state).toEqual({...initialState, currentOperation:Operation.ADD, reset:false});
+	});
 });

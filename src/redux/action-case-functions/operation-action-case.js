@@ -29,5 +29,5 @@ export default function operation(state, payLoad){
 			previousVal:undefined,
 			reset};
 	}	
-	return {...state, currentOperation:payLoad};   
+	return {...state, currentOperation:payLoad, reset};   
 }

@@ -173,5 +173,19 @@ describe('Calculator', ()=>{
 			
 			expect(wrapper.find('.display').text()).toBe(expectedResult);
 		});
+
+		it('click --> 4 --> 5 --> + --> 3 --> = --> X --> 2 --> =, updates display with expected calculated value', ()=>{		
+			const expectedResult = '24';
+			wrapper.find('button[children="4"]').simulate('click');
+			wrapper.find('button[children="5"]').simulate('click');
+			wrapper.find('button[children="+"]').simulate('click');
+			wrapper.find('button[children="3"]').simulate('click');
+			wrapper.find('button[children="="]').simulate('click');
+			wrapper.find('button[children="÷"]').simulate('click');
+			wrapper.find('button[children="2"]').simulate('click');
+			wrapper.find('button[children="="]').simulate('click');
+			
+			expect(wrapper.find('.display').text()).toBe(expectedResult);
+		});
 	});
 });
