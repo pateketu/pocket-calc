@@ -49,4 +49,29 @@ describe('operation action', ()=>{
 		const state = sut({...initialState, reset:true}, Operation.ADD);
 		expect(state).toEqual({...initialState, currentOperation:Operation.ADD, reset:false});
 	});
+
+	it('for left to right operation, saves current operation as previous operation & sets current operation to left to right operation', ()=>{
+		[Operation.MULTIPLY, Operation.DIVIDE].forEach((leftToRightOps) =>{
+			[Operation.ADD, Operation.SUBTRACT].forEach((ops)=>{			
+				const currentState = {...initialState, currentOperation:ops, currentVal:4, previousVal:5};
+				const state = sut(currentState, leftToRightOps);
+				expect(state).toEqual({...currentState, previousOperation:ops, currentOperation:leftToRightOps});
+			});
+		});
+		
+	});
+	
+	it('has previous ADD operation and preceding value, calls calculate method  with preceding value and result of current operation', ()=>{
+		calculate.mockReset();
+		calculate.mockImplementation(()=>0)
+			.mockImplementationOnce(()=>30)
+			.mockImplementationOnce(()=>0);
+
+		const currentState = {...initialState, previousOperation:Operation.ADD, currentVal:6, previousVal:5, precedingVal:4, currentOperation:Operation.mockImplementation};
+		sut(currentState, Operation.EQUAL);		
+		expect(calculate).toHaveBeenCalledWith(Operation.ADD, 30, 4);
+
+	});
+
+	
 });

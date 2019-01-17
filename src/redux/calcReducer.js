@@ -19,7 +19,9 @@ const actionCaseFunc = {
 export const initialState = {
 	currentVal:0, 
 	previousVal:undefined,
+	precedingVal:undefined,
 	currentOperation:Operation.UNKNNOWN,
+	previousOperation:Operation.UNKNNOWN,
 	reset:false,
 	point:false
 };

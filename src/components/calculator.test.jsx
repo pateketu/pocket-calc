@@ -101,13 +101,42 @@ describe('Calculator', ()=>{
 			expect(wrapper.find('.display').text()).toBe(expectedResult);
 		});
 
-		it('click --> 5 --> + --> 5 --> X, updates display with expected calculated value', ()=>{
-			const expectedResult = '10';
+		it('click --> 5 --> + --> 5 --> X --> 6 =, updates display with expected calculated value', ()=>{
+			const expectedResult = '35';
 			
 			wrapper.find('button[children="5"]').simulate('click');
 			wrapper.find('button[children="+"]').simulate('click');
 			wrapper.find('button[children="5"]').simulate('click');
 			wrapper.find('button[children="X"]').simulate('click');
+			wrapper.find('button[children="6"]').simulate('click');
+			wrapper.find('button[children="="]').simulate('click');
+			
+			expect(wrapper.find('.display').text()).toBe(expectedResult);
+		});
+
+		it('click --> 5 --> - --> 5 --> X --> 6 =, updates display with expected calculated value', ()=>{
+			const expectedResult = '-25';
+			
+			wrapper.find('button[children="5"]').simulate('click');
+			wrapper.find('button[children="-"]').simulate('click');
+			wrapper.find('button[children="5"]').simulate('click');
+			wrapper.find('button[children="X"]').simulate('click');
+			wrapper.find('button[children="6"]').simulate('click');
+			wrapper.find('button[children="="]').simulate('click');
+			
+			expect(wrapper.find('.display').text()).toBe(expectedResult);
+		});
+
+		it('click --> 5 --> + --> 30 --> ÷ --> 6 =, updates display with expected calculated value', ()=>{
+			const expectedResult = '10';
+			
+			wrapper.find('button[children="5"]').simulate('click');
+			wrapper.find('button[children="+"]').simulate('click');
+			wrapper.find('button[children="3"]').simulate('click');
+			wrapper.find('button[children="0"]').simulate('click');
+			wrapper.find('button[children="÷"]').simulate('click');
+			wrapper.find('button[children="6"]').simulate('click');
+			wrapper.find('button[children="="]').simulate('click');
 			
 			expect(wrapper.find('.display').text()).toBe(expectedResult);
 		});

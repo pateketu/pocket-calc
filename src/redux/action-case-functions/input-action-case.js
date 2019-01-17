@@ -13,6 +13,10 @@ export default function input(state, payLoad){
 			reset:false};
 	}
 
+	if(state.previousOperation !== Operation.UNKNNOWN){
+		return {...state, precedingVal:state.previousVal, previousVal:currentVal, currentVal:nextVal};
+	}
+
 	if(state.currentOperation !== Operation.UNKNNOWN 
 		&& !state.point
 		&& !state.previousVal){		

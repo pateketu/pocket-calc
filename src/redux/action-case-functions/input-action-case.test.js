@@ -61,4 +61,10 @@ describe('input action', ()=>{
 
 		expect(state.currentVal).toBe(Number.MAX_SAFE_INTEGER);
 	});
+
+	it('state has current value, previous value, current & previous operation, retruns state with expected preceding value and current value', ()=>{
+		const currentState = {...initialState, currentVal:5, previousVal:4, currentOperation:Operation.MULTIPLY, previousOperation:Operation.ADD};
+		const state = sut(currentState, 6);
+		expect(state).toEqual({...currentState, precedingVal:4, previousVal:5, currentVal:6});
+	});
 });
