@@ -4,6 +4,7 @@ import operation from './action-case-functions/operation-action-case';
 import point from './action-case-functions/point-action-case';
 import clear from './action-case-functions/clear-action-case';
 import error from './action-case-functions/error-action-case';
+import memoryOperation from './action-case-functions/memory-action-case';
 
 import * as actions from './calcActions';
 import { Operation } from '../domain/calculator';
@@ -13,12 +14,14 @@ jest.mock('./action-case-functions/operation-action-case');
 jest.mock('./action-case-functions/point-action-case');
 jest.mock('./action-case-functions/clear-action-case');
 jest.mock('./action-case-functions/error-action-case');
+jest.mock('./action-case-functions/memory-action-case');
 
 input.mockImplementation=(()=>initialState);
 operation.mockImplementation=(()=>initialState);
 point.mockImplementation=(()=>initialState);
 clear.mockImplementation=(()=>initialState);
 error.mockImplementation=(()=>initialState);
+memoryOperation.mockImplementation=(()=>initialState);
 
 describe('calcReducer', ()=>{
 	beforeEach(() => {		
@@ -57,6 +60,11 @@ describe('calcReducer', ()=>{
 	it('invokes error case action', ()=>{
 		sut(initialState, actions.error());
 		expect(error).toHaveBeenCalled();
+	});
+
+	it('invockes memory case action', ()=>{
+		sut(initialState, actions.memoryOperation('M1'));
+		expect(memoryOperation).toHaveBeenCalled();
 	});
 });
 	

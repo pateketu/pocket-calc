@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "test:win": "set CI=true &&react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "test:debug": "react-scripts --inspect-brk test --runInBand"
+    "test:debug": "react-scripts --inspect-brk test --no-cache --runInBand"
   },
   "eslintConfig": {
     "extends": "react-app"

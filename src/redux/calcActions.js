@@ -3,6 +3,13 @@ export const OPERATION = 'pocket-cals/OPERATION';
 export const CLEAR = 'pocket-cals/CLEAR';
 export const POINT = 'pocket-cals/POINT';
 export const ERROR = 'pocket-cals/ERROR';
+export const MEMORY_OPERATION = 'pocket-cals/MEMORY_OPERATION';
+
+export const MemoryOperation = {
+	MS:'MS',
+	MC:'MC',	
+	MR:'MR'
+};
 
 export function input(val){
 	return {
@@ -37,3 +44,12 @@ export function error(error){
 		payLoad:error
 	};
 }
+
+
+export function memoryOperation(memOps){
+	return {
+		type:MEMORY_OPERATION,
+		payLoad:memOps
+	};
+}
+
